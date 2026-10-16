@@ -66,7 +66,21 @@ class Program
         decimal pi = 0.0m; // m means decimal number type
 
         // TODO: Calculate Pi
-
+        double radius = BoxWidth / 2.0;
+        int dartsInCircle = 0; 
+        int dartsInSquare = 0;
+        double x = rand.NextDouble() * BoxWidth;
+        double y = rand.NextDouble() * BoxWidth;
+        dartsInSquare++;
+        for(int i = 0; i < n; i++)
+        {
+            if (Math.Sqrt(Math.Pow(x - radius, 2) + Math.Pow(y - radius, 2)) <= radius)
+            {
+                dartsInCircle++;
+            }
+            dartsInSquare++;
+        }
+        pi = 4.0m * dartsInCircle / dartsInSquare;
         return pi;
     }
 
